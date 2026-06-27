@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,22 +8,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            ivory:   '#FAF8F4',
-            blush:   '#EDD9CE',
-            sage:    '#B8C4B1',
-            ink:     '#2C2420',
-            gold:    '#C9A96E',
+            ivory: '#FAF8F4',
+            blush: '#EDD9CE',
+            sage: '#B8C4B1',
+            ink: '#2C2420',
+            gold: '#C9A96E',
           },
           fontFamily: {
             display: ['"Cormorant Garamond"', 'serif'],
-            body:    ['Jost', 'sans-serif'],
+            body: ['Jost', 'sans-serif'],
           },
           letterSpacing: {
             widest2: '0.25em',
@@ -33,24 +36,60 @@
   </script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
     body {
       background-color: #FAF8F4;
       color: #2C2420;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     /* ── Page transitions ── */
-    .page { display: none; animation: fadein 0.55s ease; }
-    .page.active { display: block; }
-    @keyframes fadein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .page {
+      display: none;
+      animation: fadein 0.55s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     /* ── Nav ── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
     .nav-link {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
@@ -61,8 +100,15 @@
       text-decoration: none;
       transition: color 0.2s;
       cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0;
     }
-    .nav-link:hover, .nav-link.active { color: #C9A96E; }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #C9A96E;
+    }
 
     /* ── Hero ── */
     .hero-title {
@@ -74,6 +120,7 @@
       color: #2C2420;
       letter-spacing: -0.02em;
     }
+
     .hero-sub {
       font-family: 'Jost', sans-serif;
       font-size: 0.68rem;
@@ -90,6 +137,7 @@
       font-weight: 400;
       color: #2C2420;
     }
+
     .eyebrow {
       font-family: 'Jost', sans-serif;
       font-size: 0.65rem;
@@ -100,8 +148,14 @@
     }
 
     /* ── Book cards ── */
-    .book-card { transition: transform 0.35s cubic-bezier(.22,.68,0,1.2); }
-    .book-card:hover { transform: translateY(-6px); }
+    .book-card {
+      transition: transform 0.35s cubic-bezier(.22, .68, 0, 1.2);
+    }
+
+    .book-card:hover {
+      transform: translateY(-6px);
+    }
+
     .book-cover {
       aspect-ratio: 2/3;
       display: flex;
@@ -113,13 +167,17 @@
     }
 
     /* ── Gold rule ── */
-    .gold-rule { border: none; border-top: 1px solid #C9A96E; opacity: 0.4; }
+    .gold-rule {
+      border: none;
+      border-top: 1px solid #C9A96E;
+      opacity: 0.4;
+    }
 
     /* ── Contact input ── */
     .vh-input {
       background: transparent;
       border: none;
-      border-bottom: 1px solid rgba(44,36,32,0.25);
+      border-bottom: 1px solid rgba(44, 36, 32, 0.25);
       padding: 0.6rem 0;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -129,9 +187,21 @@
       width: 100%;
       transition: border-color 0.2s;
     }
-    .vh-input:focus { border-color: #C9A96E; }
-    .vh-input::placeholder { color: rgba(44,36,32,0.4); font-size: 0.8rem; letter-spacing: 0.06em; }
-    .vh-textarea { resize: none; height: 100px; }
+
+    .vh-input:focus {
+      border-color: #C9A96E;
+    }
+
+    .vh-input::placeholder {
+      color: rgba(44, 36, 32, 0.4);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    .vh-textarea {
+      resize: none;
+      height: 100px;
+    }
 
     /* ── CTA button ── */
     .vh-btn {
@@ -149,12 +219,21 @@
       transition: background 0.25s, color 0.25s;
       text-decoration: none;
     }
-    .vh-btn:hover { background: #2C2420; color: #FAF8F4; }
+
+    .vh-btn:hover {
+      background: #2C2420;
+      color: #FAF8F4;
+    }
+
     .vh-btn-gold {
       border-color: #C9A96E;
       color: #C9A96E;
     }
-    .vh-btn-gold:hover { background: #C9A96E; color: #FAF8F4; }
+
+    .vh-btn-gold:hover {
+      background: #C9A96E;
+      color: #FAF8F4;
+    }
 
     /* ── Quote block ── */
     .pull-quote {
@@ -183,589 +262,746 @@
     }
 
     /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #FAF8F4; }
-    ::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 2px; }
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #FAF8F4;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #C9A96E;
+      border-radius: 2px;
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      .page { animation: none; }
-      .book-card:hover { transform: none; }
+      .page {
+        animation: none;
+      }
+
+      .book-card:hover {
+        transform: none;
+      }
+    }
+
+    /* ── mobile menu ── */
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 1rem 2.5rem;
+      background: #FAF8F4;
+      border-bottom: 1px solid rgba(44, 36, 32, 0.06);
+    }
+
+    .mobile-nav .nav-link {
+      font-size: 0.85rem;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-nav {
+        display: none !important;
+      }
+    }
+
+    #hamburger-btn {
+      background: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px 4px;
+      cursor: pointer;
+    }
+
+    #hamburger-btn span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: #2C2420;
+      transition: all 0.2s;
+      border-radius: 2px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 767px) {
+      .desktop-nav {
+        display: none;
+      }
+    }
+
+    /* hide hamburger on desktop */
+    @media (min-width: 768px) {
+      #hamburger-btn {
+        display: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      NAV
 ═══════════════════════════════════════ -->
-<nav class="mix-blend-multiply bg-ivory/80 backdrop-blur-sm border-b border-ink/5">
-  <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-    <button onclick="navigate('home')" class="nav-link font-display italic text-base normal-case tracking-normal font-normal" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; letter-spacing:0; text-transform:none;">Vivienne Hart</button>
-    <div class="flex gap-10">
-      <button onclick="navigate('home')"    class="nav-link" id="nav-home">Home</button>
-      <button onclick="navigate('books')"   class="nav-link" id="nav-books">Books</button>
-      <button onclick="navigate('about')"   class="nav-link" id="nav-about">About</button>
-      <button onclick="navigate('contact')" class="nav-link" id="nav-contact">Contact</button>
+  <nav class="mix-blend-multiply bg-ivory/90 backdrop-blur-sm border-b border-ink/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <button onclick="navigate('home')"
+        class="nav-link font-display italic text-base normal-case tracking-normal font-normal"
+        style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; letter-spacing:0; text-transform:none;">Vivienne
+        Hart</button>
+
+      <!-- Desktop nav -->
+      <div class="desktop-nav">
+        <button onclick="navigate('home')" class="nav-link" id="nav-home">Home</button>
+        <button onclick="navigate('books')" class="nav-link" id="nav-books">Books</button>
+        <button onclick="navigate('about')" class="nav-link" id="nav-about">About</button>
+        <button onclick="navigate('contact')" class="nav-link" id="nav-contact">Contact</button>
+      </div>
+
+      <!-- Hamburger (only visible on mobile) -->
+      <button id="hamburger-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</nav>
+
+    <!-- Mobile nav (hidden by default) -->
+    <div id="mobile-menu" class="mobile-nav" style="display:none;">
+      <button onclick="navigate('home'); closeMobileMenu();" class="nav-link" id="mnav-home">Home</button>
+      <button onclick="navigate('books'); closeMobileMenu();" class="nav-link" id="mnav-books">Books</button>
+      <button onclick="navigate('about'); closeMobileMenu();" class="nav-link" id="mnav-about">About</button>
+      <button onclick="navigate('contact'); closeMobileMenu();" class="nav-link" id="mnav-contact">Contact</button>
+    </div>
+  </nav>
 
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      HOME PAGE
 ═══════════════════════════════════════ -->
-<div id="page-home" class="page active">
+  <div id="page-home" class="page active">
 
-  <!-- Hero -->
-  <section class="relative min-h-screen flex flex-col justify-end overflow-hidden" style="background:#FAF8F4;">
+    <!-- Hero -->
+    <section class="relative min-h-screen flex flex-col justify-end overflow-hidden" style="background:#FAF8F4;">
 
-    <!-- Botanical watermark SVG — bleeds off right edge -->
-    <div class="watermark-wrap" style="right:-80px; top:-40px; width:660px;">
-      <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <!-- Large stem -->
-        <path d="M300 680 C295 500 310 320 280 100" stroke="#B8C4B1" stroke-width="2" fill="none"/>
-        <!-- Left branch 1 -->
-        <path d="M285 560 C220 520 160 490 110 460" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="110" cy="460" rx="38" ry="18" fill="#B8C4B1" transform="rotate(-20,110,460)"/>
-        <path d="M130 455 C155 475 180 500 200 520" stroke="#B8C4B1" stroke-width="0.8" fill="none"/>
-        <!-- Right branch 1 -->
-        <path d="M295 480 C360 440 410 410 470 390" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="470" cy="390" rx="42" ry="19" fill="#B8C4B1" transform="rotate(15,470,390)"/>
-        <!-- Left branch 2 -->
-        <path d="M288 380 C230 340 175 310 130 280" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="130" cy="280" rx="36" ry="16" fill="#B8C4B1" transform="rotate(-25,130,280)"/>
-        <ellipse cx="88" cy="265" rx="28" ry="13" fill="#B8C4B1" transform="rotate(-30,88,265)"/>
-        <!-- Right branch 2 -->
-        <path d="M292 300 C350 265 400 240 455 220" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="455" cy="220" rx="40" ry="17" fill="#B8C4B1" transform="rotate(18,455,220)"/>
-        <ellipse cx="500" cy="205" rx="30" ry="13" fill="#B8C4B1" transform="rotate(22,500,205)"/>
-        <!-- Top flower -->
-        <circle cx="282" cy="100" r="6" fill="#EDD9CE"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(0,282,74)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(45,282,100)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(90,282,100)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(135,282,100)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(180,282,100)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(225,282,100)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(270,282,100)"/>
-        <ellipse cx="282" cy="74"  rx="8"  ry="20" fill="#EDD9CE" transform="rotate(315,282,100)"/>
-        <!-- Small buds -->
-        <ellipse cx="200" cy="200" rx="12" ry="22" fill="#EDD9CE" transform="rotate(-15,200,200)"/>
-        <ellipse cx="390" cy="320" rx="11" ry="20" fill="#EDD9CE" transform="rotate(10,390,320)"/>
-        <ellipse cx="155" cy="440" rx="9"  ry="17" fill="#EDD9CE" transform="rotate(-25,155,440)"/>
-        <!-- Tiny leaves scatter -->
-        <ellipse cx="350" cy="500" rx="14" ry="7" fill="#B8C4B1" transform="rotate(30,350,500)"/>
-        <ellipse cx="240" cy="250" rx="16" ry="7" fill="#B8C4B1" transform="rotate(-40,240,250)"/>
-        <ellipse cx="420" cy="170" rx="14" ry="6" fill="#B8C4B1" transform="rotate(50,420,170)"/>
-      </svg>
-    </div>
-
-    <!-- Blush ground wash -->
-    <div class="absolute bottom-0 left-0 right-0 h-1/3" style="background: linear-gradient(to top, #EDD9CE33, transparent);"></div>
-
-    <!-- Hero text -->
-    <div class="relative z-10 max-w-6xl mx-auto px-8 pb-24 pt-32">
-      <p class="eyebrow mb-8">Literary Fiction</p>
-      <h1 class="hero-title">Stories<br/>that linger<br/><em style="color:#C9A96E;">long after</em><br/>the last page</h1>
-      <div class="flex items-center gap-8 mt-14">
-        <button onclick="navigate('books')" class="vh-btn">Discover the Books</button>
-        <div class="hidden md:block">
-          <p class="eyebrow mb-1">Latest Novel</p>
-          <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:#2C2420;">The Amber Hours</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-      <div style="width:1px; height:48px; background: linear-gradient(to bottom, transparent, #2C2420);"></div>
-    </div>
-  </section>
-
-  <!-- Pull quote -->
-  <section class="py-28 px-8" style="background:#EDD9CE20;">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="pull-quote">"Hart writes the way memory works — in fragments, in scent, in the sudden vertigo of recognition."</p>
-      <p class="eyebrow mt-8">— The Guardian</p>
-    </div>
-  </section>
-
-  <!-- Featured books strip -->
-  <section class="py-24 px-8 max-w-6xl mx-auto">
-    <div class="flex items-end justify-between mb-14">
-      <div>
-        <p class="eyebrow mb-3">The Shelf</p>
-        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3.2rem);">Three novels.<br/>One obsession.</h2>
-      </div>
-      <button onclick="navigate('books')" class="vh-btn hidden md:inline-block">View All</button>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:#2C242010;">
-      <!-- Book 1 -->
-      <div class="book-card bg-ivory p-8 cursor-pointer" onclick="navigate('books')">
-        <div class="book-cover mb-6" style="background:linear-gradient(145deg,#2C2420 0%,#4a3830 100%);">
-          <div class="absolute inset-0 opacity-10">
-            <svg viewBox="0 0 200 300" width="100%" height="100%"><circle cx="100" cy="150" r="80" fill="#C9A96E"/></svg>
-          </div>
-          <p class="eyebrow relative z-10" style="color:#C9A96E80; font-size:0.58rem;">2024</p>
-          <p class="relative z-10" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; font-weight:300; color:#FAF8F4; line-height:1.2;">The Amber<br/>Hours</p>
-        </div>
-        <p class="eyebrow mb-2">Novel · 2024</p>
-        <p style="font-size:0.85rem; line-height:1.7; color:#2C2420aa;">A woman returns to her childhood home after thirty years, only to find her memories have been curating a lie.</p>
-      </div>
-
-      <!-- Book 2 -->
-      <div class="book-card bg-ivory p-8 cursor-pointer" onclick="navigate('books')">
-        <div class="book-cover mb-6" style="background:linear-gradient(145deg,#B8C4B1 0%,#8a9e86 100%);">
-          <p class="eyebrow relative z-10" style="color:#2C242060; font-size:0.58rem;">2021</p>
-          <p class="relative z-10" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; font-weight:300; color:#2C2420; line-height:1.2;">Salt &amp;<br/>Sorrow</p>
-        </div>
-        <p class="eyebrow mb-2">Novel · 2021</p>
-        <p style="font-size:0.85rem; line-height:1.7; color:#2C2420aa;">Two sisters. One coast. The long, quiet aftermath of a catastrophe no one will name.</p>
-      </div>
-
-      <!-- Book 3 -->
-      <div class="book-card bg-ivory p-8 cursor-pointer" onclick="navigate('books')">
-        <div class="book-cover mb-6" style="background:linear-gradient(145deg,#EDD9CE 0%,#d4a98a 100%);">
-          <p class="eyebrow relative z-10" style="color:#2C242060; font-size:0.58rem;">2018</p>
-          <p class="relative z-10" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; font-weight:300; color:#2C2420; line-height:1.2;">The Light<br/>We Buried</p>
-        </div>
-        <p class="eyebrow mb-2">Debut · 2018</p>
-        <p style="font-size:0.85rem; line-height:1.7; color:#2C2420aa;">A debut of rare tenderness. A village holds its breath across an entire summer of waiting.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About teaser -->
-  <section class="py-24 px-8" style="background:#B8C4B115;">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <div>
-        <p class="eyebrow mb-5">The Author</p>
-        <h2 class="section-title mb-6" style="font-size:clamp(2rem,3.5vw,2.8rem);">Vivienne Hart writes about the rooms we never fully leave.</h2>
-        <p style="font-size:0.88rem; line-height:1.9; color:#2C2420bb; max-width:42ch;">Born in Cornwall, now writing from a converted barn in Provence, Hart is the author of three internationally acclaimed novels. Her work has been translated into nineteen languages.</p>
-        <button onclick="navigate('about')" class="vh-btn mt-10">About Vivienne</button>
-      </div>
-      <div class="portrait-block">
-        <!-- Decorative stand-in with botanical texture -->
-        <svg viewBox="0 0 400 530" width="100%" height="100%" style="position:absolute;inset:0;opacity:0.18;" xmlns="http://www.w3.org/2000/svg">
-          <path d="M200 520 C198 380 210 240 190 60" stroke="#2C2420" stroke-width="1.5" fill="none"/>
-          <path d="M192 400 C150 370 110 350 70 330" stroke="#2C2420" stroke-width="1" fill="none"/>
-          <ellipse cx="70" cy="330" rx="32" ry="14" fill="#2C2420" transform="rotate(-18,70,330)"/>
-          <path d="M196 280 C240 255 280 235 320 215" stroke="#2C2420" stroke-width="1" fill="none"/>
-          <ellipse cx="320" cy="215" rx="34" ry="15" fill="#2C2420" transform="rotate(15,320,215)"/>
-          <circle cx="192" cy="60" r="5" fill="#2C2420"/>
-          <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(0,192,38)"/>
-          <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(60,192,60)"/>
-          <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(120,192,60)"/>
-          <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(180,192,60)"/>
-          <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(240,192,60)"/>
-          <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(300,192,60)"/>
+      <!-- Botanical watermark SVG — bleeds off right edge, hidden on small -->
+      <div class="watermark-wrap hidden sm:block" style="right:-80px; top:-40px; width:660px;">
+        <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M300 680 C295 500 310 320 280 100" stroke="#B8C4B1" stroke-width="2" fill="none" />
+          <path d="M285 560 C220 520 160 490 110 460" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="110" cy="460" rx="38" ry="18" fill="#B8C4B1" transform="rotate(-20,110,460)" />
+          <path d="M130 455 C155 475 180 500 200 520" stroke="#B8C4B1" stroke-width="0.8" fill="none" />
+          <path d="M295 480 C360 440 410 410 470 390" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="470" cy="390" rx="42" ry="19" fill="#B8C4B1" transform="rotate(15,470,390)" />
+          <path d="M288 380 C230 340 175 310 130 280" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="130" cy="280" rx="36" ry="16" fill="#B8C4B1" transform="rotate(-25,130,280)" />
+          <ellipse cx="88" cy="265" rx="28" ry="13" fill="#B8C4B1" transform="rotate(-30,88,265)" />
+          <path d="M292 300 C350 265 400 240 455 220" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="455" cy="220" rx="40" ry="17" fill="#B8C4B1" transform="rotate(18,455,220)" />
+          <ellipse cx="500" cy="205" rx="30" ry="13" fill="#B8C4B1" transform="rotate(22,500,205)" />
+          <circle cx="282" cy="100" r="6" fill="#EDD9CE" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(0,282,74)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(45,282,100)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(90,282,100)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(135,282,100)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(180,282,100)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(225,282,100)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(270,282,100)" />
+          <ellipse cx="282" cy="74" rx="8" ry="20" fill="#EDD9CE" transform="rotate(315,282,100)" />
+          <ellipse cx="200" cy="200" rx="12" ry="22" fill="#EDD9CE" transform="rotate(-15,200,200)" />
+          <ellipse cx="390" cy="320" rx="11" ry="20" fill="#EDD9CE" transform="rotate(10,390,320)" />
+          <ellipse cx="155" cy="440" rx="9" ry="17" fill="#EDD9CE" transform="rotate(-25,155,440)" />
+          <ellipse cx="350" cy="500" rx="14" ry="7" fill="#B8C4B1" transform="rotate(30,350,500)" />
+          <ellipse cx="240" cy="250" rx="16" ry="7" fill="#B8C4B1" transform="rotate(-40,240,250)" />
+          <ellipse cx="420" cy="170" rx="14" ry="6" fill="#B8C4B1" transform="rotate(50,420,170)" />
         </svg>
-        <div style="position:absolute;bottom:2rem;left:2rem;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:#2C2420;opacity:0.5;">Provence, 2024</p>
+      </div>
+
+      <!-- Blush ground wash -->
+      <div class="absolute bottom-0 left-0 right-0 h-1/3"
+        style="background: linear-gradient(to top, #EDD9CE33, transparent);"></div>
+
+      <!-- Hero text -->
+      <div class="relative z-10 max-w-6xl mx-auto px-6 pb-24 pt-32">
+        <p class="eyebrow mb-8">Literary Fiction</p>
+        <h1 class="hero-title">Stories<br />that linger<br /><em style="color:#C9A96E;">long after</em><br />the last
+          page</h1>
+        <div class="flex flex-wrap items-center gap-6 mt-14">
+          <button onclick="navigate('books')" class="vh-btn">Discover the Books</button>
+          <div class="hidden md:block">
+            <p class="eyebrow mb-1">Latest Novel</p>
+            <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:#2C2420;">The
+              Amber Hours</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Press logos strip -->
-  <section class="py-16 px-8 border-t border-ink/8">
-    <div class="max-w-5xl mx-auto">
-      <p class="eyebrow text-center mb-10">As featured in</p>
-      <div class="flex flex-wrap justify-center items-center gap-12 opacity-35">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:0.08em;">The Guardian</span>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:0.08em;">Le Monde</span>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:0.08em;">The New Yorker</span>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:0.08em;">Vogue</span>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:0.08em;">Granta</span>
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <div style="width:1px; height:48px; background: linear-gradient(to bottom, transparent, #2C2420);"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-12 px-8 border-t border-ink/10">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
-      <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
-      <div class="flex gap-8">
-        <button onclick="navigate('books')"   class="nav-link">Books</button>
-        <button onclick="navigate('about')"   class="nav-link">About</button>
-        <button onclick="navigate('contact')" class="nav-link">Contact</button>
+    <!-- Pull quote -->
+    <section class="py-28 px-6" style="background:#EDD9CE20;">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="pull-quote">"Hart writes the way memory works — in fragments, in scent, in the sudden vertigo of
+          recognition."</p>
+        <p class="eyebrow mt-8">— The Guardian</p>
       </div>
-    </div>
-  </footer>
-</div>
+    </section>
+
+    <!-- Featured books strip -->
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-end justify-between mb-14">
+        <div>
+          <p class="eyebrow mb-3">The Shelf</p>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3.2rem);">Three novels.<br />One obsession.</h2>
+        </div>
+        <button onclick="navigate('books')" class="vh-btn hidden md:inline-block">View All</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:#2C242010;">
+        <!-- Book 1 -->
+        <div class="book-card bg-ivory p-6 cursor-pointer" onclick="navigate('books')">
+          <div class="book-cover mb-6" style="background:linear-gradient(145deg,#2C2420 0%,#4a3830 100%);">
+            <div class="absolute inset-0 opacity-10">
+              <svg viewBox="0 0 200 300" width="100%" height="100%">
+                <circle cx="100" cy="150" r="80" fill="#C9A96E" />
+              </svg>
+            </div>
+            <p class="eyebrow relative z-10" style="color:#C9A96E80; font-size:0.58rem;">2024</p>
+            <p class="relative z-10"
+              style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; font-weight:300; color:#FAF8F4; line-height:1.2;">
+              The Amber<br />Hours</p>
+          </div>
+          <p class="eyebrow mb-2">Novel · 2024</p>
+          <p style="font-size:0.85rem; line-height:1.7; color:#2C2420aa;">A woman returns to her childhood home after
+            thirty years, only to find her memories have been curating a lie.</p>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card bg-ivory p-6 cursor-pointer" onclick="navigate('books')">
+          <div class="book-cover mb-6" style="background:linear-gradient(145deg,#B8C4B1 0%,#8a9e86 100%);">
+            <p class="eyebrow relative z-10" style="color:#2C242060; font-size:0.58rem;">2021</p>
+            <p class="relative z-10"
+              style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; font-weight:300; color:#2C2420; line-height:1.2;">
+              Salt &amp;<br />Sorrow</p>
+          </div>
+          <p class="eyebrow mb-2">Novel · 2021</p>
+          <p style="font-size:0.85rem; line-height:1.7; color:#2C2420aa;">Two sisters. One coast. The long, quiet
+            aftermath of a catastrophe no one will name.</p>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card bg-ivory p-6 cursor-pointer" onclick="navigate('books')">
+          <div class="book-cover mb-6" style="background:linear-gradient(145deg,#EDD9CE 0%,#d4a98a 100%);">
+            <p class="eyebrow relative z-10" style="color:#2C242060; font-size:0.58rem;">2018</p>
+            <p class="relative z-10"
+              style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; font-weight:300; color:#2C2420; line-height:1.2;">
+              The Light<br />We Buried</p>
+          </div>
+          <p class="eyebrow mb-2">Debut · 2018</p>
+          <p style="font-size:0.85rem; line-height:1.7; color:#2C2420aa;">A debut of rare tenderness. A village holds
+            its breath across an entire summer of waiting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About teaser -->
+    <section class="py-24 px-6" style="background:#B8C4B115;">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="eyebrow mb-5">The Author</p>
+          <h2 class="section-title mb-6" style="font-size:clamp(2rem,3.5vw,2.8rem);">Vivienne Hart writes about the
+            rooms we never fully leave.</h2>
+          <p style="font-size:0.88rem; line-height:1.9; color:#2C2420bb; max-width:42ch;">Born in Cornwall, now writing
+            from a converted barn in Provence, Hart is the author of three internationally acclaimed novels. Her work
+            has been translated into nineteen languages.</p>
+          <button onclick="navigate('about')" class="vh-btn mt-10">About Vivienne</button>
+        </div>
+        <div class="portrait-block">
+          <svg viewBox="0 0 400 530" width="100%" height="100%" style="position:absolute;inset:0;opacity:0.18;"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M200 520 C198 380 210 240 190 60" stroke="#2C2420" stroke-width="1.5" fill="none" />
+            <path d="M192 400 C150 370 110 350 70 330" stroke="#2C2420" stroke-width="1" fill="none" />
+            <ellipse cx="70" cy="330" rx="32" ry="14" fill="#2C2420" transform="rotate(-18,70,330)" />
+            <path d="M196 280 C240 255 280 235 320 215" stroke="#2C2420" stroke-width="1" fill="none" />
+            <ellipse cx="320" cy="215" rx="34" ry="15" fill="#2C2420" transform="rotate(15,320,215)" />
+            <circle cx="192" cy="60" r="5" fill="#2C2420" />
+            <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(0,192,38)" />
+            <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(60,192,60)" />
+            <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(120,192,60)" />
+            <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(180,192,60)" />
+            <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(240,192,60)" />
+            <ellipse cx="192" cy="38" rx="7" ry="18" fill="#2C2420" transform="rotate(300,192,60)" />
+          </svg>
+          <div style="position:absolute;bottom:2rem;left:2rem;">
+            <p
+              style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:#2C2420;opacity:0.5;">
+              Provence, 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Press logos strip -->
+    <section class="py-16 px-6 border-t border-ink/8">
+      <div class="max-w-5xl mx-auto">
+        <p class="eyebrow text-center mb-10">As featured in</p>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-35">
+          <span
+            style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;letter-spacing:0.08em;">The
+            Guardian</span>
+          <span
+            style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;letter-spacing:0.08em;">Le
+            Monde</span>
+          <span
+            style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;letter-spacing:0.08em;">The
+            New Yorker</span>
+          <span
+            style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;letter-spacing:0.08em;">Vogue</span>
+          <span
+            style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;letter-spacing:0.08em;">Granta</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-ink/10">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
+        <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
+        <div class="flex gap-8">
+          <button onclick="navigate('books')" class="nav-link">Books</button>
+          <button onclick="navigate('about')" class="nav-link">About</button>
+          <button onclick="navigate('contact')" class="nav-link">Contact</button>
+        </div>
+      </div>
+    </footer>
+  </div>
 
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      BOOKS PAGE
 ═══════════════════════════════════════ -->
-<div id="page-books" class="page">
+  <div id="page-books" class="page">
 
-  <!-- Page hero -->
-  <section class="pt-40 pb-20 px-8 relative overflow-hidden">
-    <!-- Subtle botanical, left side -->
-    <div class="watermark-wrap" style="left:-100px;top:20px;width:450px;transform:scaleX(-1);">
-      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <path d="M200 480 C198 350 208 200 188 40" stroke="#B8C4B1" stroke-width="2" fill="none"/>
-        <path d="M192 350 C145 320 100 300 55 278" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="55" cy="278" rx="34" ry="15" fill="#B8C4B1" transform="rotate(-18,55,278)"/>
-        <path d="M195 230 C245 205 288 185 335 165" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="335" cy="165" rx="38" ry="16" fill="#B8C4B1" transform="rotate(15,335,165)"/>
-        <ellipse cx="155" cy="320" rx="24" ry="10" fill="#EDD9CE" transform="rotate(-30,155,320)"/>
-        <ellipse cx="268" cy="260" rx="22" ry="9" fill="#EDD9CE" transform="rotate(20,268,260)"/>
-      </svg>
-    </div>
-    <div class="max-w-6xl mx-auto relative z-10">
-      <p class="eyebrow mb-5">The Books</p>
-      <h1 class="section-title" style="font-size:clamp(3rem,7vw,6rem);">Three worlds<br/>to disappear into.</h1>
-    </div>
-  </section>
-
-  <hr class="gold-rule max-w-6xl mx-auto mb-0" style="margin-left:2rem;margin-right:2rem;" />
-
-  <!-- Book 1 — Featured / large -->
-  <section class="py-20 px-8">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
-      <div class="md:col-span-2">
-        <div class="book-cover" style="background:linear-gradient(145deg,#2C2420 0%,#4a3830 100%); aspect-ratio:2/3; position:relative; overflow:hidden;">
-          <div style="position:absolute;inset:0;opacity:0.15;">
-            <svg viewBox="0 0 200 300" width="100%" height="100%">
-              <circle cx="100" cy="150" r="90" fill="none" stroke="#C9A96E" stroke-width="0.5"/>
-              <circle cx="100" cy="150" r="60" fill="none" stroke="#C9A96E" stroke-width="0.5"/>
-              <circle cx="100" cy="150" r="30" fill="#C9A96E"/>
-            </svg>
-          </div>
-          <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;font-weight:300;color:#FAF8F4;line-height:1.1;">The Amber<br/>Hours</p>
-            <p style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.18em;color:#C9A96E;margin-top:0.5rem;text-transform:uppercase;">Vivienne Hart</p>
-          </div>
-        </div>
+    <!-- Page hero -->
+    <section class="pt-40 pb-20 px-6 relative overflow-hidden">
+      <div class="watermark-wrap hidden sm:block" style="left:-100px;top:20px;width:450px;transform:scaleX(-1);">
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M200 480 C198 350 208 200 188 40" stroke="#B8C4B1" stroke-width="2" fill="none" />
+          <path d="M192 350 C145 320 100 300 55 278" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="55" cy="278" rx="34" ry="15" fill="#B8C4B1" transform="rotate(-18,55,278)" />
+          <path d="M195 230 C245 205 288 185 335 165" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="335" cy="165" rx="38" ry="16" fill="#B8C4B1" transform="rotate(15,335,165)" />
+          <ellipse cx="155" cy="320" rx="24" ry="10" fill="#EDD9CE" transform="rotate(-30,155,320)" />
+          <ellipse cx="268" cy="260" rx="22" ry="9" fill="#EDD9CE" transform="rotate(20,268,260)" />
+        </svg>
       </div>
-      <div class="md:col-span-3 pt-4">
-        <p class="eyebrow mb-4">Latest Novel · 2024</p>
-        <h2 class="section-title mb-6" style="font-size:clamp(2rem,3.5vw,2.8rem);">The Amber Hours</h2>
-        <p style="font-size:0.9rem;line-height:1.9;color:#2C2420bb;margin-bottom:1.2rem;">When Clara Vane returns to the Norfolk coast after thirty years, she expects to find the house she grew up in. What she finds instead is a version of her past that has been quietly, methodically rearranged.</p>
-        <p style="font-size:0.9rem;line-height:1.9;color:#2C2420bb;margin-bottom:1.2rem;"><em style="font-family:'Cormorant Garamond',serif;">The Amber Hours</em> is a novel about the stories families tell instead of the truth, and the particular grief of understanding too late.</p>
-        <hr class="gold-rule my-8" />
-        <div class="flex flex-wrap gap-3 mb-8">
-          <span class="eyebrow" style="font-size:0.6rem; background:#EDD9CE; padding:0.4rem 1rem; color:#2C2420;">Longlisted · Booker Prize 2024</span>
-          <span class="eyebrow" style="font-size:0.6rem; background:#B8C4B120; padding:0.4rem 1rem; color:#2C2420;">Costa Novel Award · Shortlist</span>
-        </div>
-        <div class="flex flex-wrap gap-4">
-          <a href="#" class="vh-btn">Order Now</a>
-          <a href="#" class="vh-btn vh-btn-gold">Reading Group Guide</a>
-        </div>
-        <div class="mt-10 pl-6 border-l-2" style="border-color:#C9A96E60;">
-          <p class="pull-quote" style="font-size:1.25rem;">"Hypnotic. Hart's sentences are built to last."</p>
-          <p class="eyebrow mt-3" style="font-size:0.58rem;">— The Times Literary Supplement</p>
-        </div>
+      <div class="max-w-6xl mx-auto relative z-10">
+        <p class="eyebrow mb-5">The Books</p>
+        <h1 class="section-title" style="font-size:clamp(3rem,7vw,6rem);">Three worlds<br />to disappear into.</h1>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="gold-rule" style="margin:0 2rem;" />
+    <hr class="gold-rule max-w-6xl mx-auto mb-0" style="margin-left:1.5rem;margin-right:1.5rem;" />
 
-  <!-- Books 2 & 3 — Smaller / side by side -->
-  <section class="py-20 px-8">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-
-      <!-- Book 2 -->
-      <div>
-        <div class="grid grid-cols-2 gap-8 items-start">
-          <div class="book-cover" style="background:linear-gradient(145deg,#B8C4B1 0%,#8a9e86 100%);aspect-ratio:2/3;position:relative;overflow:hidden;">
-            <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-              <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;font-weight:300;color:#2C2420;line-height:1.2;">Salt &amp;<br/>Sorrow</p>
+    <!-- Book 1 — Featured / large -->
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+        <div class="md:col-span-2">
+          <div class="book-cover"
+            style="background:linear-gradient(145deg,#2C2420 0%,#4a3830 100%); aspect-ratio:2/3; position:relative; overflow:hidden;">
+            <div style="position:absolute;inset:0;opacity:0.15;">
+              <svg viewBox="0 0 200 300" width="100%" height="100%">
+                <circle cx="100" cy="150" r="90" fill="none" stroke="#C9A96E" stroke-width="0.5" />
+                <circle cx="100" cy="150" r="60" fill="none" stroke="#C9A96E" stroke-width="0.5" />
+                <circle cx="100" cy="150" r="30" fill="#C9A96E" />
+              </svg>
+            </div>
+            <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
+              <p
+                style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;font-weight:300;color:#FAF8F4;line-height:1.1;">
+                The Amber<br />Hours</p>
+              <p
+                style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.18em;color:#C9A96E;margin-top:0.5rem;text-transform:uppercase;">
+                Vivienne Hart</p>
             </div>
           </div>
-          <div class="pt-2">
-            <p class="eyebrow mb-3">Novel · 2021</p>
-            <h3 class="section-title mb-4" style="font-size:1.6rem;">Salt &amp; Sorrow</h3>
-            <p style="font-size:0.83rem;line-height:1.85;color:#2C2420bb;">Two sisters inherit a fishing cottage on the Outer Hebrides. What they cannot inherit is a way of talking about what happened.</p>
-            <a href="#" class="vh-btn mt-6 inline-block" style="font-size:0.62rem;padding:0.7rem 1.5rem;">Order</a>
+        </div>
+        <div class="md:col-span-3 pt-4">
+          <p class="eyebrow mb-4">Latest Novel · 2024</p>
+          <h2 class="section-title mb-6" style="font-size:clamp(2rem,3.5vw,2.8rem);">The Amber Hours</h2>
+          <p style="font-size:0.9rem;line-height:1.9;color:#2C2420bb;margin-bottom:1.2rem;">When Clara Vane returns to
+            the Norfolk coast after thirty years, she expects to find the house she grew up in. What she finds instead
+            is a version of her past that has been quietly, methodically rearranged.</p>
+          <p style="font-size:0.9rem;line-height:1.9;color:#2C2420bb;margin-bottom:1.2rem;"><em
+              style="font-family:'Cormorant Garamond',serif;">The Amber Hours</em> is a novel about the stories families
+            tell instead of the truth, and the particular grief of understanding too late.</p>
+          <hr class="gold-rule my-8" />
+          <div class="flex flex-wrap gap-3 mb-8">
+            <span class="eyebrow"
+              style="font-size:0.6rem; background:#EDD9CE; padding:0.4rem 1rem; color:#2C2420;">Longlisted · Booker
+              Prize 2024</span>
+            <span class="eyebrow"
+              style="font-size:0.6rem; background:#B8C4B120; padding:0.4rem 1rem; color:#2C2420;">Costa Novel Award ·
+              Shortlist</span>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="#" class="vh-btn">Order Now</a>
+            <a href="#" class="vh-btn vh-btn-gold">Reading Group Guide</a>
+          </div>
+          <div class="mt-10 pl-6 border-l-2" style="border-color:#C9A96E60;">
+            <p class="pull-quote" style="font-size:1.25rem;">"Hypnotic. Hart's sentences are built to last."</p>
+            <p class="eyebrow mt-3" style="font-size:0.58rem;">— The Times Literary Supplement</p>
           </div>
         </div>
-        <div class="mt-8 pl-5 border-l" style="border-color:#C9A96E50;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.5;">"Beautifully restrained. A book that trusts its reader."</p>
-          <p class="eyebrow mt-2" style="font-size:0.58rem;">— New Statesman</p>
-        </div>
       </div>
+    </section>
 
-      <!-- Book 3 -->
-      <div>
-        <div class="grid grid-cols-2 gap-8 items-start">
-          <div class="book-cover" style="background:linear-gradient(145deg,#EDD9CE 0%,#d4a98a 100%);aspect-ratio:2/3;position:relative;overflow:hidden;">
-            <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-              <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;font-weight:300;color:#2C2420;line-height:1.2;">The Light<br/>We Buried</p>
+    <hr class="gold-rule" style="margin:0 1.5rem;" />
+
+    <!-- Books 2 & 3 -->
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+
+        <!-- Book 2 -->
+        <div>
+          <div class="grid grid-cols-2 gap-6 items-start">
+            <div class="book-cover"
+              style="background:linear-gradient(145deg,#B8C4B1 0%,#8a9e86 100%);aspect-ratio:2/3;position:relative;overflow:hidden;">
+              <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
+                <p
+                  style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;font-weight:300;color:#2C2420;line-height:1.2;">
+                  Salt &amp;<br />Sorrow</p>
+              </div>
+            </div>
+            <div class="pt-2">
+              <p class="eyebrow mb-3">Novel · 2021</p>
+              <h3 class="section-title mb-4" style="font-size:1.6rem;">Salt &amp; Sorrow</h3>
+              <p style="font-size:0.83rem;line-height:1.85;color:#2C2420bb;">Two sisters inherit a fishing cottage on
+                the Outer Hebrides. What they cannot inherit is a way of talking about what happened.</p>
+              <a href="#" class="vh-btn mt-6 inline-block" style="font-size:0.62rem;padding:0.7rem 1.5rem;">Order</a>
             </div>
           </div>
-          <div class="pt-2">
-            <p class="eyebrow mb-3">Debut · 2018</p>
-            <h3 class="section-title mb-4" style="font-size:1.6rem;">The Light We Buried</h3>
-            <p style="font-size:0.83rem;line-height:1.85;color:#2C2420bb;">A debut of rare tenderness. A village on the Somerset Levels holds its collective breath through a summer of heat and waiting.</p>
-            <a href="#" class="vh-btn mt-6 inline-block" style="font-size:0.62rem;padding:0.7rem 1.5rem;">Order</a>
+          <div class="mt-8 pl-5 border-l" style="border-color:#C9A96E50;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.5;">
+              "Beautifully restrained. A book that trusts its reader."</p>
+            <p class="eyebrow mt-2" style="font-size:0.58rem;">— New Statesman</p>
           </div>
         </div>
-        <div class="mt-8 pl-5 border-l" style="border-color:#C9A96E50;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.5;">"An extraordinary debut. A novelist fully formed."</p>
-          <p class="eyebrow mt-2" style="font-size:0.58rem;">— The Observer</p>
+
+        <!-- Book 3 -->
+        <div>
+          <div class="grid grid-cols-2 gap-6 items-start">
+            <div class="book-cover"
+              style="background:linear-gradient(145deg,#EDD9CE 0%,#d4a98a 100%);aspect-ratio:2/3;position:relative;overflow:hidden;">
+              <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
+                <p
+                  style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;font-weight:300;color:#2C2420;line-height:1.2;">
+                  The Light<br />We Buried</p>
+              </div>
+            </div>
+            <div class="pt-2">
+              <p class="eyebrow mb-3">Debut · 2018</p>
+              <h3 class="section-title mb-4" style="font-size:1.6rem;">The Light We Buried</h3>
+              <p style="font-size:0.83rem;line-height:1.85;color:#2C2420bb;">A debut of rare tenderness. A village on
+                the Somerset Levels holds its collective breath through a summer of heat and waiting.</p>
+              <a href="#" class="vh-btn mt-6 inline-block" style="font-size:0.62rem;padding:0.7rem 1.5rem;">Order</a>
+            </div>
+          </div>
+          <div class="mt-8 pl-5 border-l" style="border-color:#C9A96E50;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.5;">"An
+              extraordinary debut. A novelist fully formed."</p>
+            <p class="eyebrow mt-2" style="font-size:0.58rem;">— The Observer</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Book club CTA -->
-  <section class="py-20 px-8" style="background:#EDD9CE30;">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="eyebrow mb-5">For Reading Groups</p>
-      <h2 class="section-title mb-6" style="font-size:clamp(1.8rem,3vw,2.4rem);">Discussion guides and signed editions available for book clubs.</h2>
-      <button onclick="navigate('contact')" class="vh-btn">Get in Touch</button>
-    </div>
-  </section>
+    <!-- Book club CTA -->
+    <section class="py-20 px-6" style="background:#EDD9CE30;">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="eyebrow mb-5">For Reading Groups</p>
+        <h2 class="section-title mb-6" style="font-size:clamp(1.8rem,3vw,2.4rem);">Discussion guides and signed editions
+          available for book clubs.</h2>
+        <button onclick="navigate('contact')" class="vh-btn">Get in Touch</button>
+      </div>
+    </section>
 
-  <footer class="py-12 px-8 border-t border-ink/10 mt-8">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
-      <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
-    </div>
-  </footer>
-</div>
+    <footer class="py-12 px-6 border-t border-ink/10 mt-8">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
+        <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
+      </div>
+    </footer>
+  </div>
 
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      ABOUT PAGE
 ═══════════════════════════════════════ -->
-<div id="page-about" class="page">
+  <div id="page-about" class="page">
 
-  <!-- Header -->
-  <section class="pt-40 pb-16 px-8">
-    <div class="max-w-6xl mx-auto">
-      <p class="eyebrow mb-5">About</p>
-      <h1 class="section-title" style="font-size:clamp(3rem,6vw,5.5rem);">Vivienne Hart</h1>
-    </div>
-  </section>
+    <section class="pt-40 pb-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <p class="eyebrow mb-5">About</p>
+        <h1 class="section-title" style="font-size:clamp(3rem,6vw,5.5rem);">Vivienne Hart</h1>
+      </div>
+    </section>
 
-  <!-- Portrait + bio -->
-  <section class="pb-24 px-8">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+    <section class="pb-24 px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
 
-      <!-- Portrait column -->
-      <div class="md:col-span-4">
-        <div class="portrait-block" style="max-width:360px;">
-          <svg viewBox="0 0 400 530" width="100%" height="100%" style="position:absolute;inset:0;opacity:0.2;" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <path d="M200 520 C198 380 212 240 190 50" stroke="#2C2420" stroke-width="1.5" fill="none"/>
-            <path d="M194 380 C148 350 104 330 60 308" stroke="#2C2420" stroke-width="1" fill="none"/>
-            <ellipse cx="60" cy="308" rx="34" ry="15" fill="#2C2420" transform="rotate(-20,60,308)"/>
-            <path d="M197 255 C248 228 292 208 342 188" stroke="#2C2420" stroke-width="1" fill="none"/>
-            <ellipse cx="342" cy="188" rx="36" ry="16" fill="#2C2420" transform="rotate(16,342,188)"/>
-            <circle cx="192" cy="50" r="5" fill="#2C2420"/>
-            <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(0,192,28)"/>
-            <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(60,192,50)"/>
-            <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(120,192,50)"/>
-            <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(180,192,50)"/>
-            <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(240,192,50)"/>
-            <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(300,192,50)"/>
-          </svg>
-          <div style="position:absolute;bottom:1.5rem;left:1.5rem;">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:#2C2420;opacity:0.5;">Photo: Maëlle Guichard</p>
+        <div class="md:col-span-4">
+          <div class="portrait-block" style="max-width:360px;">
+            <svg viewBox="0 0 400 530" width="100%" height="100%" style="position:absolute;inset:0;opacity:0.2;"
+              xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M200 520 C198 380 212 240 190 50" stroke="#2C2420" stroke-width="1.5" fill="none" />
+              <path d="M194 380 C148 350 104 330 60 308" stroke="#2C2420" stroke-width="1" fill="none" />
+              <ellipse cx="60" cy="308" rx="34" ry="15" fill="#2C2420" transform="rotate(-20,60,308)" />
+              <path d="M197 255 C248 228 292 208 342 188" stroke="#2C2420" stroke-width="1" fill="none" />
+              <ellipse cx="342" cy="188" rx="36" ry="16" fill="#2C2420" transform="rotate(16,342,188)" />
+              <circle cx="192" cy="50" r="5" fill="#2C2420" />
+              <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(0,192,28)" />
+              <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(60,192,50)" />
+              <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(120,192,50)" />
+              <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(180,192,50)" />
+              <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(240,192,50)" />
+              <ellipse cx="192" cy="28" rx="7" ry="18" fill="#EDD9CE" transform="rotate(300,192,50)" />
+            </svg>
+            <div style="position:absolute;bottom:1.5rem;left:1.5rem;">
+              <p
+                style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:#2C2420;opacity:0.5;">
+                Photo: Maëlle Guichard</p>
+            </div>
+          </div>
+
+          <div class="mt-10 space-y-5">
+            <p class="eyebrow">Recognition</p>
+            <div class="space-y-3 mt-4">
+              <div class="flex gap-3 items-start">
+                <div style="width:3px;height:100%;background:#C9A96E;flex-shrink:0;margin-top:4px;height:14px;"></div>
+                <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Booker Prize Longlist, 2024</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div style="width:3px;height:14px;background:#C9A96E;flex-shrink:0;margin-top:4px;"></div>
+                <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Costa Novel Award Shortlist, 2024</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div style="width:3px;height:14px;background:#C9A96E60;flex-shrink:0;margin-top:4px;"></div>
+                <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Baileys Women's Prize, 2021</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div style="width:3px;height:14px;background:#C9A96E40;flex-shrink:0;margin-top:4px;"></div>
+                <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Betty Trask Award, 2018</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div style="width:3px;height:14px;background:#C9A96E30;flex-shrink:0;margin-top:4px;"></div>
+                <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">19 languages translated</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Awards sidebar -->
-        <div class="mt-10 space-y-5">
-          <p class="eyebrow">Recognition</p>
-          <div class="space-y-3 mt-4">
-            <div class="flex gap-3 items-start">
-              <div style="width:3px;height:100%;background:#C9A96E;flex-shrink:0;margin-top:4px;height:14px;"></div>
-              <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Booker Prize Longlist, 2024</p>
+        <div class="md:col-span-8 md:pt-4">
+          <div class="pull-quote mb-10" style="font-size:clamp(1.4rem,2.5vw,2rem);">"I am interested in what gets said
+            in the margins — the pauses, the evasions, the things people almost tell each other."</div>
+
+          <div class="space-y-5" style="font-size:0.9rem;line-height:1.95;color:#2C2420bb;max-width:62ch;">
+            <p>Vivienne Hart was born on the Lizard Peninsula in Cornwall in 1979, the youngest of four children in a
+              family of schoolteachers and one largely unacknowledged painter. She spent her twenties in London, working
+              in publishing and writing two novels she has never shown to anyone.</p>
+            <p>Her debut, <em style="font-family:'Cormorant Garamond',serif;">The Light We Buried</em>, was published in
+              2018 to immediate critical acclaim, described by the Observer as "an extraordinary debut — a novelist
+              fully formed." The novel was adapted for BBC Radio 4 in 2020 and has been taught in secondary schools
+              across the UK.</p>
+            <p>Her second novel, <em style="font-family:'Cormorant Garamond',serif;">Salt &amp; Sorrow</em> (2021), was
+              shortlisted for the Baileys Women's Prize and longlisted for the Women's Prize for Fiction. Set across a
+              single week on the Outer Hebrides, it is a novel about grief, silence, and the language of coastlines.</p>
+            <p>Her most recent novel, <em style="font-family:'Cormorant Garamond',serif;">The Amber Hours</em>, was
+              published in spring 2024. She lives in Provence with her husband, a ceramicist, and a dog of unremarkable
+              character but strong opinions about walks.</p>
+          </div>
+
+          <hr class="gold-rule my-10" style="max-width:420px;" />
+
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <p class="eyebrow mb-3">Agent</p>
+              <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Emma Rushton<br />The Marsh
+                Agency<br />London</p>
             </div>
-            <div class="flex gap-3 items-start">
-              <div style="width:3px;height:14px;background:#C9A96E;flex-shrink:0;margin-top:4px;"></div>
-              <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Costa Novel Award Shortlist, 2024</p>
-            </div>
-            <div class="flex gap-3 items-start">
-              <div style="width:3px;height:14px;background:#C9A96E60;flex-shrink:0;margin-top:4px;"></div>
-              <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Baileys Women's Prize, 2021</p>
-            </div>
-            <div class="flex gap-3 items-start">
-              <div style="width:3px;height:14px;background:#C9A96E40;flex-shrink:0;margin-top:4px;"></div>
-              <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">Betty Trask Award, 2018</p>
-            </div>
-            <div class="flex gap-3 items-start">
-              <div style="width:3px;height:14px;background:#C9A96E30;flex-shrink:0;margin-top:4px;"></div>
-              <p style="font-size:0.8rem;line-height:1.6;color:#2C2420aa;">19 languages translated</p>
+            <div>
+              <p class="eyebrow mb-3">Speaking &amp; Events</p>
+              <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">For invitations to literary festivals, book
+                clubs, and international events, please use the contact form.</p>
+              <button onclick="navigate('contact')" class="vh-btn mt-5"
+                style="font-size:0.6rem;padding:0.7rem 1.4rem;">Contact</button>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Bio text -->
-      <div class="md:col-span-8 md:pt-4">
-        <div class="pull-quote mb-10" style="font-size:clamp(1.4rem,2.5vw,2rem);">"I am interested in what gets said in the margins — the pauses, the evasions, the things people almost tell each other."</div>
-
-        <div class="space-y-5" style="font-size:0.9rem;line-height:1.95;color:#2C2420bb;max-width:62ch;">
-          <p>Vivienne Hart was born on the Lizard Peninsula in Cornwall in 1979, the youngest of four children in a family of schoolteachers and one largely unacknowledged painter. She spent her twenties in London, working in publishing and writing two novels she has never shown to anyone.</p>
-          <p>Her debut, <em style="font-family:'Cormorant Garamond',serif;">The Light We Buried</em>, was published in 2018 to immediate critical acclaim, described by the Observer as "an extraordinary debut — a novelist fully formed." The novel was adapted for BBC Radio 4 in 2020 and has been taught in secondary schools across the UK.</p>
-          <p>Her second novel, <em style="font-family:'Cormorant Garamond',serif;">Salt &amp; Sorrow</em> (2021), was shortlisted for the Baileys Women's Prize and longlisted for the Women's Prize for Fiction. Set across a single week on the Outer Hebrides, it is a novel about grief, silence, and the language of coastlines.</p>
-          <p>Her most recent novel, <em style="font-family:'Cormorant Garamond',serif;">The Amber Hours</em>, was published in spring 2024. She lives in Provence with her husband, a ceramicist, and a dog of unremarkable character but strong opinions about walks.</p>
-        </div>
-
-        <hr class="gold-rule my-10" style="max-width:420px;" />
-
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <p class="eyebrow mb-3">Agent</p>
-            <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Emma Rushton<br/>The Marsh Agency<br/>London</p>
-          </div>
-          <div>
-            <p class="eyebrow mb-3">Speaking &amp; Events</p>
-            <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">For invitations to literary festivals, book clubs, and international events, please use the contact form.</p>
-            <button onclick="navigate('contact')" class="vh-btn mt-5" style="font-size:0.6rem;padding:0.7rem 1.4rem;">Contact</button>
-          </div>
-        </div>
+    <section class="py-20 px-6 border-t border-ink/8" style="background:#EDD9CE20;">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="pull-quote">"Every novel is a letter to someone who will never quite be able to write back. That
+          one-way tenderness is why I do this."</p>
+        <p class="eyebrow mt-8">— Vivienne Hart, Paris Review Interview, 2023</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Long quote -->
-  <section class="py-20 px-8 border-t border-ink/8" style="background:#EDD9CE20;">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="pull-quote">"Every novel is a letter to someone who will never quite be able to write back. That one-way tenderness is why I do this."</p>
-      <p class="eyebrow mt-8">— Vivienne Hart, Paris Review Interview, 2023</p>
-    </div>
-  </section>
-
-  <footer class="py-12 px-8 border-t border-ink/10">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
-      <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
-    </div>
-  </footer>
-</div>
+    <footer class="py-12 px-6 border-t border-ink/10">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
+        <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
+      </div>
+    </footer>
+  </div>
 
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      CONTACT PAGE
 ═══════════════════════════════════════ -->
-<div id="page-contact" class="page">
+  <div id="page-contact" class="page">
 
-  <section class="pt-40 pb-32 px-8 relative overflow-hidden">
+    <section class="pt-40 pb-32 px-6 relative overflow-hidden">
 
-    <!-- Botanical, right -->
-    <div class="watermark-wrap" style="right:-60px;top:60px;width:400px;">
-      <svg viewBox="0 0 380 540" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <path d="M180 530 C178 400 192 260 170 60" stroke="#B8C4B1" stroke-width="2" fill="none"/>
-        <path d="M174 400 C130 370 88 348 44 326" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="44" cy="326" rx="34" ry="15" fill="#B8C4B1" transform="rotate(-20,44,326)"/>
-        <path d="M177 265 C228 238 272 218 322 198" stroke="#B8C4B1" stroke-width="1.5" fill="none"/>
-        <ellipse cx="322" cy="198" rx="36" ry="16" fill="#B8C4B1" transform="rotate(16,322,198)"/>
-        <ellipse cx="130" cy="360" rx="22" ry="9" fill="#EDD9CE" transform="rotate(-30,130,360)"/>
-        <ellipse cx="248" cy="290" rx="20" ry="8" fill="#EDD9CE" transform="rotate(20,248,290)"/>
-        <circle cx="172" cy="60" r="5" fill="#EDD9CE"/>
-        <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(0,172,38)"/>
-        <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(60,172,60)"/>
-        <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(120,172,60)"/>
-        <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(180,172,60)"/>
-        <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(240,172,60)"/>
-        <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(300,172,60)"/>
-      </svg>
-    </div>
-
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 relative z-10">
-
-      <!-- Left: intro -->
-      <div>
-        <p class="eyebrow mb-5">Get in Touch</p>
-        <h1 class="section-title mb-8" style="font-size:clamp(2.5rem,5vw,4.5rem);">Letters<br/>welcome.</h1>
-        <p style="font-size:0.88rem;line-height:1.9;color:#2C2420bb;max-width:40ch;">Vivienne reads all correspondence personally. She may be slow to reply — the book takes precedence — but she does reply.</p>
-
-        <div class="mt-14 space-y-8">
-          <div>
-            <p class="eyebrow mb-2">For Media &amp; Press</p>
-            <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Interview requests, review copies, and press enquiries to <em style="font-family:'Cormorant Garamond',serif;">press@viviennehart.com</em></p>
-          </div>
-          <div>
-            <p class="eyebrow mb-2">For Rights &amp; Translation</p>
-            <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Please contact Emma Rushton at The Marsh Agency directly.</p>
-          </div>
-          <div>
-            <p class="eyebrow mb-2">For Reading Groups</p>
-            <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Vivienne occasionally joins book clubs by video. Use the form to enquire.</p>
-          </div>
-        </div>
+      <div class="watermark-wrap hidden sm:block" style="right:-60px;top:60px;width:400px;">
+        <svg viewBox="0 0 380 540" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M180 530 C178 400 192 260 170 60" stroke="#B8C4B1" stroke-width="2" fill="none" />
+          <path d="M174 400 C130 370 88 348 44 326" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="44" cy="326" rx="34" ry="15" fill="#B8C4B1" transform="rotate(-20,44,326)" />
+          <path d="M177 265 C228 238 272 218 322 198" stroke="#B8C4B1" stroke-width="1.5" fill="none" />
+          <ellipse cx="322" cy="198" rx="36" ry="16" fill="#B8C4B1" transform="rotate(16,322,198)" />
+          <ellipse cx="130" cy="360" rx="22" ry="9" fill="#EDD9CE" transform="rotate(-30,130,360)" />
+          <ellipse cx="248" cy="290" rx="20" ry="8" fill="#EDD9CE" transform="rotate(20,248,290)" />
+          <circle cx="172" cy="60" r="5" fill="#EDD9CE" />
+          <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(0,172,38)" />
+          <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(60,172,60)" />
+          <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(120,172,60)" />
+          <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(180,172,60)" />
+          <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(240,172,60)" />
+          <ellipse cx="172" cy="38" rx="6" ry="16" fill="#EDD9CE" transform="rotate(300,172,60)" />
+        </svg>
       </div>
 
-      <!-- Right: form -->
-      <div>
-        <div class="space-y-8">
-          <div>
-            <label class="eyebrow block mb-2" for="cf-name">Your Name</label>
-            <input class="vh-input" id="cf-name" type="text" placeholder="How shall she address her reply?" />
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 relative z-10">
+
+        <div>
+          <p class="eyebrow mb-5">Get in Touch</p>
+          <h1 class="section-title mb-8" style="font-size:clamp(2.5rem,5vw,4.5rem);">Letters<br />welcome.</h1>
+          <p style="font-size:0.88rem;line-height:1.9;color:#2C2420bb;max-width:40ch;">Vivienne reads all correspondence
+            personally. She may be slow to reply — the book takes precedence — but she does reply.</p>
+
+          <div class="mt-14 space-y-8">
+            <div>
+              <p class="eyebrow mb-2">For Media &amp; Press</p>
+              <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Interview requests, review copies, and press
+                enquiries to <em style="font-family:'Cormorant Garamond',serif;">press@viviennehart.com</em></p>
+            </div>
+            <div>
+              <p class="eyebrow mb-2">For Rights &amp; Translation</p>
+              <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Please contact Emma Rushton at The Marsh
+                Agency directly.</p>
+            </div>
+            <div>
+              <p class="eyebrow mb-2">For Reading Groups</p>
+              <p style="font-size:0.83rem;color:#2C2420aa;line-height:1.7;">Vivienne occasionally joins book clubs by
+                video. Use the form to enquire.</p>
+            </div>
           </div>
-          <div>
-            <label class="eyebrow block mb-2" for="cf-email">Email Address</label>
-            <input class="vh-input" id="cf-email" type="email" placeholder="your@email.com" />
-          </div>
-          <div>
-            <label class="eyebrow block mb-2" for="cf-subject">Subject</label>
-            <select class="vh-input" id="cf-subject" style="appearance:none;cursor:pointer;background:transparent;">
-              <option value="" disabled selected>Select a subject</option>
-              <option>General correspondence</option>
-              <option>Book club invitation</option>
-              <option>Media &amp; press enquiry</option>
-              <option>Speaking &amp; festival</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label class="eyebrow block mb-2" for="cf-message">Your Message</label>
-            <textarea class="vh-input vh-textarea" id="cf-message" placeholder="Write as much or as little as you like."></textarea>
-          </div>
-          <button class="vh-btn w-full" style="text-align:center;" onclick="handleSubmit()">Send Message</button>
         </div>
-        <div id="submit-confirm" style="display:none;" class="mt-8 p-6" style="background:#B8C4B120;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;">Thank you. Your letter has been sent.</p>
+
+        <div>
+          <div class="space-y-8">
+            <div>
+              <label class="eyebrow block mb-2" for="cf-name">Your Name</label>
+              <input class="vh-input" id="cf-name" type="text" placeholder="How shall she address her reply?" />
+            </div>
+            <div>
+              <label class="eyebrow block mb-2" for="cf-email">Email Address</label>
+              <input class="vh-input" id="cf-email" type="email" placeholder="your@email.com" />
+            </div>
+            <div>
+              <label class="eyebrow block mb-2" for="cf-subject">Subject</label>
+              <select class="vh-input" id="cf-subject" style="appearance:none;cursor:pointer;background:transparent;">
+                <option value="" disabled selected>Select a subject</option>
+                <option>General correspondence</option>
+                <option>Book club invitation</option>
+                <option>Media &amp; press enquiry</option>
+                <option>Speaking &amp; festival</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="eyebrow block mb-2" for="cf-message">Your Message</label>
+              <textarea class="vh-input vh-textarea" id="cf-message"
+                placeholder="Write as much or as little as you like."></textarea>
+            </div>
+            <button class="vh-btn w-full" style="text-align:center;" onclick="handleSubmit()">Send Message</button>
+          </div>
+          <div id="submit-confirm" style="display:none;" class="mt-8 p-6" style="background:#B8C4B120;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;">Thank you. Your letter
+              has been sent.</p>
+          </div>
         </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <footer class="py-12 px-8 border-t border-ink/10">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
-      <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
-    </div>
-  </footer>
-</div>
+    <footer class="py-12 px-6 border-t border-ink/10">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;">Vivienne Hart</p>
+        <p style="font-size:0.7rem;letter-spacing:0.12em;color:#2C242055;">© 2025 All rights reserved</p>
+      </div>
+    </footer>
+  </div>
 
 
-<script>
-  function navigate(page) {
-    // Hide all pages
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    // Show target
-    document.getElementById('page-' + page).classList.add('active');
-    // Update nav
-    document.querySelectorAll('.nav-link[id]').forEach(n => n.classList.remove('active'));
-    const navEl = document.getElementById('nav-' + page);
-    if (navEl) navEl.classList.add('active');
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  <script>
+    function navigate(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + page).classList.add('active');
+      document.querySelectorAll('.nav-link[id]').forEach(n => n.classList.remove('active'));
+      const navEl = document.getElementById('nav-' + page);
+      if (navEl) navEl.classList.add('active');
+      // mobile
+      document.querySelectorAll('#mobile-menu .nav-link').forEach(n => n.classList.remove('active'));
+      const mNav = document.getElementById('mnav-' + page);
+      if (mNav) mNav.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      closeMobileMenu();
+    }
 
-  function handleSubmit() {
-    const confirm = document.getElementById('submit-confirm');
-    confirm.style.display = 'block';
-    confirm.style.background = '#B8C4B115';
-    confirm.style.padding = '1.5rem 2rem';
-    confirm.style.borderLeft = '2px solid #C9A96E';
-    setTimeout(() => { confirm.style.display = 'none'; }, 5000);
-  }
+    function handleSubmit() {
+      const confirm = document.getElementById('submit-confirm');
+      confirm.style.display = 'block';
+      confirm.style.background = '#B8C4B115';
+      confirm.style.padding = '1.5rem 2rem';
+      confirm.style.borderLeft = '2px solid #C9A96E';
+      setTimeout(() => { confirm.style.display = 'none'; }, 5000);
+    }
 
-  // Set initial nav state
-  document.getElementById('nav-home').classList.add('active');
-</script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').style.display = 'none';
+    }
+
+    document.getElementById('nav-home').classList.add('active');
+    document.getElementById('mnav-home').classList.add('active');
+  </script>
 </body>
+
 </html>
